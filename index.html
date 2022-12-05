@@ -1,0 +1,59 @@
+<?
+$hn = "sql307.byethost13.com";
+$un = "b13_17788187";
+$pw = "89377470074";
+$bn = "b13_17788187_message";
+
+$conn = new mysqli($hn, $un, $pw, $bn) or die ('Невозможно открыть базу');
+    $sql = "SELECT id FROM messages";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    if ($row['id'] <= 100) {} else die("#111");
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="https://www.cssscript.com/demo/material-design-inspired-custom-html-inputs-with-css-javascript/dist/css/bootstrap-inputs.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        <header align="center">
+            <h2>Уделити время не большому опросу</h2>
+            <h4>4 Простых вопроса</h4>
+        </header>
+        <main>
+            <form class="form-inputs" method="post" action="message.php">
+                <h3>Как изменился дизайн сайта?</h3>
+                <input type='radio' id='input1' name='design' value="1">
+  <label for="input1">Дизайн Стал Лучше!</label> 
+                <input type='radio' id='input2' name='design' value="3">
+  <label for="input2">Стало Ещё Хуже!</label>
+                <input type='radio' id='input3' name='design' value="3">
+  <label for="input3">Не изменилось.</label>
+                <br>
+                <h3>Как изменилась скорость работы сайта?</h3>
+                <input type='radio' id='input4' name='speed' value="1">
+  <label for="input4">Сайт стал работать Быстрее!</label> 
+                <input type='radio' id='input5' name='speed' value="2">
+  <label for="input5">Сайт стал работать Медленее!</label>
+                <input type='radio' id='input6' name='speed' value="3">
+  <label for="input6">Не заметно изменений.</label>
+                <br>
+                <h3>Вы бы привели друга на сайт?</h3>
+                <input type='radio' id='input10' name='share' value="1">
+  <label for="input10">ДА!</label> 
+                <input type='radio' id='input11' name='share' value="2">
+  <label for="input11">НЕТ!</label>
+                <input type='radio' id='input12' name='share' value="3">
+  <label for="input12">Зачем?</label>
+                <h3>Что бы вы посоветовали чтобы улучшить сайт?</h3>
+                <textarea rows=3 name="ta"></textarea>
+                <input name="submit" value="1" style="display: none;">
+                <button type="submit">Отправить</button>
+            </form>
+        </main>
+    </body>
+</html>
